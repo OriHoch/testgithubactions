@@ -1,7 +1,6 @@
 name: ci
 on:
   push:
-    tags: ".*"
 jobs:
   ci:
     runs-on: ubuntu-18.04
