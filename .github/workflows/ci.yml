@@ -7,4 +7,5 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - run: |
-        echo "${GITHUB_REF}"
+        TAG_NAME="${GITHUB_REF/refs\/tags\//}"
+        echo "${TAG_NAME}"
