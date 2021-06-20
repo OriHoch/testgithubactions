@@ -7,10 +7,9 @@ jobs:
   ci:
     runs-on: ubuntu-18.04
     env:
-      GITHUB_EVENT_BASE_REF: ${{ github.event.base_ref }}
       GITHUB_EVENT_BEFORE: ${{ github.event.before }}
     steps:
     - run: |
-        echo GITHUB_EVENT_BASE_REF=$GITHUB_EVENT_BASE_REF
+        echo GITHUB_SHA=$GITHUB_SHA
         echo GITHUB_EVENT_BEFORE=$GITHUB_EVENT_BEFORE
 
