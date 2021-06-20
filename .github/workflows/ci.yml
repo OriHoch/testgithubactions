@@ -1,11 +1,16 @@
 name: ci
 on:
   push:
-    tags: "**"
+    branches:
+      - main
 jobs:
   ci:
     runs-on: ubuntu-18.04
+    env:
+      GITHUB_EVENT_BASE_REF: ${{ github.event.base_ref }}
+      GITHUB_EVENT_BEFORE: ${{ github.event.before }}
     steps:
     - run: |
-        TAG_NAME="${GITHUB_REF/refs\/tags\//}"
-        echo "${TAG_NAME}"
+        echo GITHUB_EVENT_BASE_REF=$GITHUB_EVENT_BASE_REF
+        echo GITHUB_EVENT_BEFORE=$GITHUB_EVENT_BEFORE
+
