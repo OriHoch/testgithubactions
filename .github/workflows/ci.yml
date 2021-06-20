@@ -10,6 +10,9 @@ jobs:
       GITHUB_EVENT_BEFORE: ${{ github.event.before }}
     steps:
     - run: |
-        echo GITHUB_SHA=$GITHUB_SHA
-        echo GITHUB_EVENT_BEFORE=$GITHUB_EVENT_BEFORE
+        echo GITHUB_SHA=$GITHUB_SHA >> log.txt
+        echo GITHUB_EVENT_BEFORE=$GITHUB_EVENT_BEFORE >> log.txt
+        git add log.txt
+        git commit -m "update log.txt"
+        git push origin main
 
